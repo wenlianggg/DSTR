@@ -1,4 +1,4 @@
-package wl.p04;
+package wl.p04.q01;
 
 //==============================================================
 //Program Name:	ShapeFunction.java

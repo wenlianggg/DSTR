@@ -1,4 +1,4 @@
-package wl.p04;
+package wl.p04.q01;
 
 
 public class ShapeApp {
@@ -14,6 +14,7 @@ public class ShapeApp {
 		// TODO Auto-generated method stub
 		Square square = new Square (3.0);
 		Triangle triangle = new Triangle (4.0, 5.0);
+		Circle circle = new Circle(5.0);
 		ShapeApp shapeApp = new ShapeApp();
 		Shape shape;
 		
@@ -21,12 +22,15 @@ public class ShapeApp {
 		
 		shapeApp.printShapeInfo(square);
 		shapeApp.printShapeInfo(triangle);
+		shapeApp.printShapeInfo(circle);
 		
 		System.out.println("\nAssigning different Shape objects to Shape interface");
 		
 		shape = square;
 		shapeApp.printShapeInfo(shape);
 		shape = triangle;
+		shapeApp.printShapeInfo(shape);
+		shape = circle;
 		shapeApp.printShapeInfo(shape);
 		
 	}

@@ -1,4 +1,4 @@
-package wl.p04;
+package wl.p04.q03;
 
 //********************************************************************
 //  Hourly.java       Author: Lewis and Loftus
