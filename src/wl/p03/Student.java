@@ -1,8 +1,10 @@
-package wl.p01;
+package wl.p03;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+
+import wl.p01.Q1MyCalendar;
 
 public class Student {
 	

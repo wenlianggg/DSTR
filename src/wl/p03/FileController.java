@@ -1,4 +1,4 @@
-package wl.p01;
+package wl.p03;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;

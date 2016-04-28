@@ -33,7 +33,6 @@ public class Q1MyCalendar {
 		int day = sc.nextInt();
 		int month = sc.nextInt() - 1;
 		int year = sc.nextInt();
-		System.out.println(day + "/" + + month + "/" + year);
 		sc.close();
 		return new GregorianCalendar(year, month, day);
 	}
