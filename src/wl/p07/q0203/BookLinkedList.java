@@ -1,17 +1,15 @@
-package wl.p07.q01;
+package wl.p07.q0203;
 
-import wl.p07.q01.ListNode;
-
-public class LinkedList {
+public class BookLinkedList {
 	// reference to first item in list
 	private ListNode pHead;
 
 	// constructor
-	public LinkedList() {
+	public BookLinkedList() {
 		pHead = null;
 	}
 
-	public void insertFirst(int value) {
+	public void insertFirst(Book value) {
 		ListNode newNode = new ListNode(value);
 		newNode.next = pHead;
 		pHead = newNode;
@@ -24,7 +22,7 @@ public class LinkedList {
 		// loop through until end of list
 
 		while (current != null) {
-			System.out.print(current.data + " ");
+			System.out.print("{" + current.data + "} ");
 			current = current.next; // move to next link
 		}
 		System.out.println();
@@ -52,13 +50,13 @@ public class LinkedList {
 	// This method searches the linked list for a node
 	// with a specified key value and returns a reference
 	// to that node
-	public ListNode find(int key) {
+	public ListNode find(Book key) {
 		ListNode p = pHead;
 		// if list is empty
 		if (p == null)
 			return null;
 
-		while (p.data != key) {
+		while (!p.data.equals(key)) {
 			if (p.next == null) // if end of list
 				return null; // not found
 			else
@@ -71,7 +69,7 @@ public class LinkedList {
 	// for the node with a specified key value, using
 	// the find method, and insert a new node with
 	// the given value.
-	public ListNode insertAfter(int key, int value) {
+	public ListNode insertAfter(Book key, Book value) {
 		ListNode p = find(key);
 		// if list is empty or key not found,
 		// insert fail
@@ -92,7 +90,7 @@ public class LinkedList {
 		if (curr == null) // if list is empty
 			return null;
 
-		while (curr.data != key) {
+		while (!curr.data.equals(key)) {
 			if (curr.next == null) // if end of list
 				return null; // not found
 			else {
@@ -105,8 +103,41 @@ public class LinkedList {
 			pHead = pHead.next;
 		else
 			prev.next = curr.next;
-		// set the next ref to null
+		// set the next reference to null
 		curr.next = null;
 		return curr;
 	}
+	
+	// Instance method for question 3
+	public void insertInOrder(Book value) {
+		ListNode current = pHead;
+		// Do if LL is empty
+		if (pHead == null) {
+			insertFirst(value);
+			return;
+		}
+		
+		while (current != null) {
+			System.out.println(current.data.toString() + " vs " + value.toString() + " = " + current.data.compareTo(value));
+			if (current.next != null) {
+				if (current.data.compareTo(value) > 0 && value.compareTo(current.next.data) > 0) {
+					insertAfter(current.data, value);
+					return;
+				} else if (current.data.compareTo(value) < 0) {
+					insertFirst(value);
+					return;
+				}
+				current = current.next;
+			} else {
+				insertAfter(current.data, value);
+				return;
+			}
+
+		}
+
+	}
+	
+	
 }
+
+
