@@ -18,9 +18,9 @@ public class StudentSearch {
 			adminNums.add(stud.getAdminNo());
 		}
 		Scanner sc = new Scanner(System.in);
-		for(;;) {
+		for(String toFind;;) {
 			System.out.print("***Enter student admin number: ");
-			String toFind = sc.next();
+			toFind = sc.next();
 			if(toFind.equalsIgnoreCase("quit"))
 				break;
 			int location = Collections.binarySearch(adminNums, toFind);
