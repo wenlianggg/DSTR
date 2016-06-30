@@ -21,26 +21,19 @@ public class LinkedList<T extends Comparable<T>> {
         ListNode<T> curr = pHead;
         // if the current list is empty
         if (curr == null) { return this.insertFirst(value); }
-        while (curr != null)
-        {
-            if (curr.data.compareTo(value) > 0)
-                // the current listNode's data is larger 
-                // than the value that we want to insert
-            {
-                // let's insert it here. we need distinguish two cases,
-                // case 1) this is the first node in the 
-                // list
+        while (curr != null) {
+            if (curr.data.compareTo(value) > 0) {
                 if (prev == curr) {
+                	// If this will be the first node
                     return this.insertFirst(value);
                 } else {
-                    // case 2) this is not the first node
+                    // If this is not the first node
                     ListNode<T> newNode = new ListNode<T>(value);
                     prev.next = newNode;
                     newNode.next = curr;
                     return newNode;
                 }
-            } else { // the current node data is smaller or equal to the value
-            // to advance to the next node;
+            } else {
             prev = curr;
             curr = curr.next;
             }
